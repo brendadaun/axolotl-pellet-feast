@@ -44,77 +44,33 @@
       position: relative;
       overflow: hidden;
     }
+
     
-    .axolotl {
+    #axolotl {
+      position: absolute;
       width: 60px;
       height: 40px;
-      position: absolute;
-      transition: transform 0.1s;
+      background-color: #ffcccc;
+      border-radius: 30%;
+      transition: left 0.1s, top 0.1s;
       z-index: 10;
-      user-select: none;
-    }
+    } 
     
-    .axolotl-body {
-      width: 100%;
-      height: 100%;
-      background-color: #f8bbd0;
-      border-radius: 20px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-    
-    .axolotl-face {
+.gill {
       position: absolute;
-      width: 20px;
-      height: 10px;
-      display: flex;
-      justify-content: space-between;
-      margin-top: 10px;
-    }
-    
-    .axolotl-eye {
-      width: 6px;
-      height: 6px;
-      background-color: #000;
-      border-radius: 50%;
-    }
-    
-    .axolotl-gill {
-      position: absolute;
-      width: 10px;
-      height: 16px;
-      background-color: #f48fb1;
-      border-radius: 5px;
-      top: -12px;
-    }
-    
-    .axolotl-gill.left {
-      left: 10px;
-    }
-    
-    .axolotl-gill.middle-left {
-      left: 20px;
-      height: 12px;
-    }
-    
-    .axolotl-gill.middle-right {
-      right: 20px;
-      height: 12px;
-    }
-    
-    .axolotl-gill.right {
-      right: 10px;
-    }
-    
-    .axolotl-tail {
-      position: absolute;
-      width: 14px;
+      background-color: #ffaaaa;
+      width: 15px;
       height: 20px;
-      background-color: #f48fb1;
-      border-radius: 0 10px 10px 0;
-      right: -10px;
-      top: 10px;
+      border-radius: 50% 50% 0 0;  }
+
+
+    
+    .eye {
+      position: absolute;
+      background-color: #000;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
     }
     
     .pellet {
@@ -125,7 +81,8 @@
       position: absolute;
       z-index: 5;
     }
-    
+
+  
     .obstacle {
       position: absolute;
       background-color: #4db6ac;
@@ -258,7 +215,7 @@
       
       // Game variables
       let score = 0;
-      let timeLeft = 100;
+      let timeLeft = 60;
       let level = 1;
       let gameRunning = false;
       let gamePaused = false;
@@ -314,7 +271,7 @@
         
         // Reset game state
         score = 0;
-        timeLeft = 100;
+        timeLeft = 60;
         level = 1;
         gameRunning = true;
         gamePaused = false;
@@ -343,16 +300,18 @@
       }
       
       // Start the main game loop
-      function startGameLoop()
+      function startGameLoop() {
         // Game timer
         timer = setInterval(() => {
           if (gamePaused) return;
-timeLeft--;
-timeDisplay.textContent = `Time: ${timeLeft}`;
-
-if (timeLeft <= 0) {
-  endGame();
-}
+          
+          timeLeft--;
+          timeDisplay.textContent = `Time: ${timeLeft}`;
+          
+          if (timeLeft <= 0) {
+            endGame();
+          }
+        }, 1000);
         
         // Pellet creation interval
         const pelletDelay = 2000 - (level * 200);
