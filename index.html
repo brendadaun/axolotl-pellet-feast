@@ -44,8 +44,7 @@
       position: relative;
       overflow: hidden;
     }
-    
-    .axolotl {
+        .axolotl {
       width: 60px;
       height: 40px;
       position: absolute;
@@ -62,7 +61,7 @@
       position: relative;
       display: flex;
       justify-content: center;
-    }
+    /* Add a lighter belly */ background-image: linear-gradient(to bottom, #f8bbd0, #fce4ec); }
     
     .axolotl-face {
       position: absolute;
@@ -74,10 +73,11 @@
     }
     
     .axolotl-eye {
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       background-color: #000;
       border-radius: 50%;
+position: relative;
     }
     
     .axolotl-gill {
@@ -116,6 +116,8 @@
       right: -10px;
       top: 10px;
     }
+
+/* Add a cute smile */ .axolotl-mouth { position: absolute; width: 10px; height: 5px; border-bottom: 2px solid #333; border-radius: 50%; bottom: -2px; left: 50%; transform: translateX(-50%); }
     
     .pellet {
       width: 15px;
