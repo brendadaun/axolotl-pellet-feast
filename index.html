@@ -44,33 +44,77 @@
       position: relative;
       overflow: hidden;
     }
-
     
-    #axolotl {
-      position: absolute;
+    .axolotl {
       width: 60px;
       height: 40px;
-      background-color: #ffcccc;
-      border-radius: 30%;
-      transition: left 0.1s, top 0.1s;
+      position: absolute;
+      transition: transform 0.1s;
       z-index: 10;
-    } 
+      user-select: none;
+    }
     
-.gill {
-      position: absolute;
-      background-color: #ffaaaa;
-      width: 15px;
-      height: 20px;
-      border-radius: 50% 50% 0 0;  }
-
-
+    .axolotl-body {
+      width: 100%;
+      height: 100%;
+      background-color: #f8bbd0;
+      border-radius: 20px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
     
-    .eye {
+    .axolotl-face {
       position: absolute;
+      width: 20px;
+      height: 10px;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    
+    .axolotl-eye {
+      width: 6px;
+      height: 6px;
       background-color: #000;
-      width: 8px;
-      height: 8px;
       border-radius: 50%;
+    }
+    
+    .axolotl-gill {
+      position: absolute;
+      width: 10px;
+      height: 16px;
+      background-color: #f48fb1;
+      border-radius: 5px;
+      top: -12px;
+    }
+    
+    .axolotl-gill.left {
+      left: 10px;
+    }
+    
+    .axolotl-gill.middle-left {
+      left: 20px;
+      height: 12px;
+    }
+    
+    .axolotl-gill.middle-right {
+      right: 20px;
+      height: 12px;
+    }
+    
+    .axolotl-gill.right {
+      right: 10px;
+    }
+    
+    .axolotl-tail {
+      position: absolute;
+      width: 14px;
+      height: 20px;
+      background-color: #f48fb1;
+      border-radius: 0 10px 10px 0;
+      right: -10px;
+      top: 10px;
     }
     
     .pellet {
@@ -81,8 +125,7 @@
       position: absolute;
       z-index: 5;
     }
-
-  
+    
     .obstacle {
       position: absolute;
       background-color: #4db6ac;
