@@ -240,6 +240,16 @@
     <button id="start-button">Start Game</button>
     <button id="pause-button" disabled>Pause</button>
   </div>
+
+const touchControls = document.createElement('div');
+touchControls.className = 'touch-controls';
+touchControls.innerHTML = `
+  <button id="touch-up">⬆️</button>
+  <button id="touch-left">⬅️</button>
+  <button id="touch-right">➡️</button>
+  <button id="touch-down">⬇️</button>
+`;
+document.body.appendChild(touchControls);
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
