@@ -16,9 +16,6 @@ A fun browser-based game where you control a cute axolotl swimming in a tank, ea
 - Score tracking and level progression
 - Time-based gameplay
 
-## Play Now
-You can play the game directly at: https://[your-username].github.io/[your-repo-name]/
-
 ## Technologies Used
 - HTML
 - CSS
