@@ -34,65 +34,6 @@ body {
     font-size: 16px;
   }
 }
-.game-controls {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-/* For mobile devices */
-@media (max-width: 768px) {
-  .direction-controls {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 40px);
-    grid-template-rows: repeat(3, 40px);
-    gap: 5px;
-  }
-  
-  .game-controls {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  #touch-up { grid-column: 2; grid-row: 1; }
-  #touch-left { grid-column: 1; grid-row: 2; }
-  #touch-right { grid-column: 3; grid-row: 2; }
-  #touch-down { grid-column: 2; grid-row: 3; }
-}
-
-/* Position buttons in a cross/plus pattern */
-#touch-up {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-#touch-left {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-#touch-right {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-#touch-down {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-.touch-row {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
 
 .touch-controls button {
   width: 50px;
