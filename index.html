@@ -314,7 +314,7 @@
         
         // Reset game state
         score = 0;
-        timeLeft = 60;
+        timeLeft = 0;
         level = 1;
         gameRunning = true;
         gamePaused = false;
@@ -343,17 +343,12 @@
       }
       
       // Start the main game loop
-      function startGameLoop() {
+      function startGameLoop()
         // Game timer
         timer = setInterval(() => {
           if (gamePaused) return;
-          
-          timeLeft--;
-          timeDisplay.textContent = `Time: ${timeLeft}`;
-          
-          if (timeLeft <= 0) {
-            endGame();
-          }
+          timeLeft++;
+timeDisplay.textContent = `Time: ${timeLeft}`;
         }, 1000);
         
         // Pellet creation interval
