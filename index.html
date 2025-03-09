@@ -301,6 +301,41 @@
           e.preventDefault();
         }
       });
+
+// Add after your existing key event listeners
+  
+// Touch controls for mobile
+const touchControls = document.createElement('div');
+touchControls.className = 'touch-controls';
+touchControls.innerHTML = `
+  <div class="touch-row">
+    <button id="touch-up">⬆️</button>
+  </div>
+  <div class="touch-row">
+    <button id="touch-left">⬅️</button>
+    <button id="touch-right">➡️</button>
+  </div>
+  <div class="touch-row">
+    <button id="touch-down">⬇️</button>
+  </div>
+`;
+document.body.appendChild(touchControls);
+
+// Touch control event listeners
+document.getElementById('touch-up').addEventListener('touchstart', () => { keys.ArrowUp = true; });
+document.getElementById('touch-up').addEventListener('touchend', () => { keys.ArrowUp = false; });
+document.getElementById('touch-down').addEventListener('touchstart', () => { keys.ArrowDown = true; });
+document.getElementById('touch-down').addEventListener('touchend', () => { keys.ArrowDown = false; });
+document.getElementById('touch-left').addEventListener('touchstart', () => { keys.ArrowLeft = true; });
+document.getElementById('touch-left').addEventListener('touchend', () => { keys.ArrowLeft = false; });
+document.getElementById('touch-right').addEventListener('touchstart', () => { keys.ArrowRight = true; });
+document.getElementById('touch-right').addEventListener('touchend', () => { keys.ArrowRight = false; });
+
+// Prevent default behavior for touch events to avoid scrolling while playing
+document.querySelectorAll('.touch-controls button').forEach(button => {
+  button.addEventListener('touchstart', (e) => e.preventDefault());
+  button.addEventListener('touchend', (e) => e.preventDefault());
+});
       
       document.addEventListener('keyup', (e) => {
         if (keys.hasOwnProperty(e.key)) {
