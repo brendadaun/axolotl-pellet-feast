@@ -79,11 +79,162 @@ body {
   .game-container {
     height: 300px;
   }
-  
+
   .axolotl {
-    width: 50px;
-    height: 35px;
-  }
+  width: 60px;
+  height: 40px;
+  position: absolute;
+  transition: transform 0.1s;
+  z-index: 10;
+  user-select: none;
+  animation: bobbing 3s infinite ease-in-out;
+}
+
+@keyframes bobbing {
+  0% { transform: translateY(0) scaleX(1); }
+  50% { transform: translateY(-3px) scaleX(1); }
+  100% { transform: translateY(0) scaleX(1); }
+}
+
+.axolotl.left {
+  animation: bobbing 3s infinite ease-in-out;
+}
+
+.axolotl.right {
+  animation: bobbing 3s infinite ease-in-out;
+}
+
+.axolotl-body {
+  width: 100%;
+  height: 100%;
+  background-color: #f8bbd0;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.axolotl-belly {
+  position: absolute;
+  width: 70%;
+  height: 50%;
+  background-color: #fce4ec;
+  border-radius: 50%;
+  bottom: -5px;
+  left: 15%;
+}
+
+.axolotl-face {
+  position: absolute;
+  width: 20px;
+  height: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  z-index: 2;
+}
+
+.axolotl-eye {
+  width: 8px;
+  height: 8px;
+  background-color: #000;
+  border-radius: 50%;
+  position: relative;
+}
+
+.axolotl-eye::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  border-radius: 50%;
+  top: 1px;
+  left: 1px;
+}
+
+.axolotl-mouth {
+  position: absolute;
+  width: 10px;
+  height: 5px;
+  border-bottom: 2px solid #333;
+  border-radius: 50%;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.axolotl-gill {
+  position: absolute;
+  width: 10px;
+  height: 16px;
+  background-color: #f48fb1;
+  border-radius: 5px;
+  top: -12px;
+}
+
+.axolotl-gill.left {
+  left: 10px;
+  animation: gillWave 2s infinite ease-in-out;
+  animation-delay: 0.1s;
+}
+
+.axolotl-gill.middle-left {
+  left: 20px;
+  height: 12px;
+  animation: gillWave 2s infinite ease-in-out;
+  animation-delay: 0.3s;
+}
+
+.axolotl-gill.middle-right {
+  right: 20px;
+  height: 12px;
+  animation: gillWave 2s infinite ease-in-out;
+  animation-delay: 0.5s;
+}
+
+.axolotl-gill.right {
+  right: 10px;
+  animation: gillWave 2s infinite ease-in-out;
+  animation-delay: 0.7s;
+}
+
+@keyframes gillWave {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.axolotl-tail {
+  position: absolute;
+  width: 14px;
+  height: 20px;
+  background-color: #f48fb1;
+  border-radius: 0 10px 10px 0;
+  right: -10px;
+  top: 10px;
+  animation: tailWag 2s infinite ease-in-out;
+}
+
+@keyframes tailWag {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Add this for the happy wiggle when collecting pellets */
+@keyframes happyWiggle {
+  0% { transform: rotate(0deg) scaleX(1); }
+  25% { transform: rotate(5deg) scaleX(1.1); }
+  50% { transform: rotate(0deg) scaleX(1); }
+  75% { transform: rotate(-5deg) scaleX(1.1); }
+  100% { transform: rotate(0deg) scaleX(1); }
+}
+
+.axolotl.happy {
+  animation: happyWiggle 0.5s;
+}
   
   h1 {
     font-size: 24px;
