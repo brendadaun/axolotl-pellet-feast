@@ -53,82 +53,22 @@
       z-index: 10;
       user-select: none;
     }
-    
-    .axolotl-body {
-      width: 100%;
-      height: 100%;
-      background-color: #f8bbd0;
-      border-radius: 20px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-    
-    .axolotl-face {
-      position: absolute;
-      width: 20px;
-      height: 10px;
-      display: flex;
-      justify-content: space-between;
-      margin-top: 10px;
-    }
 
-   <div class="axolotl-body">
-  <div class="axolotl-gill left"></div>
-  <div class="axolotl-gill middle-left"></div>
-  <div class="axolotl-gill middle-right"></div>
-  <div class="axolotl-gill right"></div>
-  <div class="axolotl-face">
-    <div class="axolotl-eye"></div>
-    <div class="axolotl-eye"></div>
+    <div class="axolotl">
+  <div class="axolotl-body">
+    <div class="axolotl-gill left"></div>
+    <div class="axolotl-gill middle-left"></div>
+    <div class="axolotl-gill middle-right"></div>
+    <div class="axolotl-gill right"></div>
+    <div class="axolotl-face">
+      <div class="axolotl-eye"></div>
+      <div class="axolotl-eye"></div>
+      <div class="axolotl-mouth"></div>
+    </div>
+    <div class="axolotl-tail"></div>
+    <div class="axolotl-belly"></div>
   </div>
-  <div class="axolotl-mouth"></div> <!-- New mouth element -->
-  <div class="axolotl-tail"></div>
-</div> 
-    .axolotl-eye {
-      width: 6px;
-      height: 6px;
-      background-color: #000;
-      border-radius: 50%;
-    }
-    
-    .axolotl-gill {
-      position: absolute;
-      width: 10px;
-      height: 16px;
-      background-color: #f48fb1;
-      border-radius: 5px;
-      top: -12px;
-    }
-    
-    .axolotl-gill.left {
-      left: 10px;
-    }
-    
-    .axolotl-gill.middle-left {
-      left: 20px;
-      height: 12px;
-    }
-    
-    .axolotl-gill.middle-right {
-      right: 20px;
-      height: 12px;
-    }
-    
-    .axolotl-gill.right {
-      right: 10px;
-    }
-    
-    .axolotl-tail {
-      position: absolute;
-      width: 14px;
-      height: 20px;
-      background-color: #f48fb1;
-      border-radius: 0 10px 10px 0;
-      right: -10px;
-      top: 10px;
-    }
-    
+</div>
     .pellet {
       width: 15px;
       height: 15px;
