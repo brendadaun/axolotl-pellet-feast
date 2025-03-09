@@ -19,4 +19,4 @@ A fun browser-based game where you control a cute axolotl swimming in a tank, ea
 ## Technologies Used
 - HTML
 - CSS
-- JavaScript# axolotl-pellet-feast
+- JavaScript
