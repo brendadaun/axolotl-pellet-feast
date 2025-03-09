@@ -42,10 +42,33 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 180px;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
+  height: 180px;
   z-index: 100;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+}
+
+/* Position buttons in a cross/plus pattern */
+#touch-up {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#touch-left {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#touch-right {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+#touch-down {
+  grid-column: 2;
+  grid-row: 3;
 }
 
 .touch-row {
