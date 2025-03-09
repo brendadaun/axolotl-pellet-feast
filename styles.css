@@ -92,4 +92,19 @@ body {
   .game-info {
     font-size: 16px;
   }
+  @keyframes bobbing {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+.axolotl {
+  width: 60px;
+  height: 40px;
+  position: absolute;
+  transition: transform 0.1s;
+  z-index: 10;
+  user-select: none;
+  animation: bobbing 3s infinite ease-in-out;
+}
 }
