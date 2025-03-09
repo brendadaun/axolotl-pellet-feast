@@ -258,7 +258,7 @@
       
       // Game variables
       let score = 0;
-      let timeLeft = 60;
+      let timeLeft = 100;
       let level = 1;
       let gameRunning = false;
       let gamePaused = false;
@@ -314,7 +314,7 @@
         
         // Reset game state
         score = 0;
-        timeLeft = 0;
+        timeLeft = 100;
         level = 1;
         gameRunning = true;
         gamePaused = false;
@@ -347,9 +347,12 @@
         // Game timer
         timer = setInterval(() => {
           if (gamePaused) return;
-          timeLeft++;
+timeLeft--;
 timeDisplay.textContent = `Time: ${timeLeft}`;
-        }, 1000);
+
+if (timeLeft <= 0) {
+  endGame();
+}
         
         // Pellet creation interval
         const pelletDelay = 2000 - (level * 200);
